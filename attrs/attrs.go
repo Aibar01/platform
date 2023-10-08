@@ -7,10 +7,10 @@ import (
 )
 
 type ContextAttrs struct {
-	XAuthToken    string `header:"X-Authorization" json:"x_auth_token,omitempty"`
-	AuthToken     string `header:"Authorization" json:"auth_token"`
-	Locale        string `header:"Accept-Language" json:"locale"`
-	CorrelationId string `header:"X-Correlation-Id" json:"correlation_id"`
+	XAuthToken    string `header:"X-Authorization" json:"X-Authorization,omitempty"`
+	AuthToken     string `header:"Authorization" json:"Authorization"`
+	Locale        string `header:"Accept-Language" json:"Accept-Language"`
+	CorrelationId string `header:"X-Correlation-Id" json:"X-Correlation-Id"`
 }
 
 func (a *ContextAttrs) GetByTagName(tagName string) map[string]string {
