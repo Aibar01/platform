@@ -85,9 +85,12 @@ func (p *PlatformContext) Validate(header http.Header) error {
 		return err
 	}
 
-	if err = json.Unmarshal(jsonData, &p.contextAttrs); err != nil {
+	var pfmAttrs attrs.ContextAttrs
+	if err = json.Unmarshal(jsonData, &pfmAttrs); err != nil {
 		return err
 	}
+
+	p.contextAttrs = pfmAttrs
 
 	return nil
 }
